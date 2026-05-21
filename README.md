@@ -297,6 +297,20 @@ airman-fullstack-assessment/
 
 ---
 
+## Screenshots
+
+See [`docs/screenshots/`](docs/screenshots/) for screenshots of:
+- Login screen with 6-role picker
+- Operations dashboard with role-aware welcome banner and bento KPIs
+- Sortie Board with filter pills + Create Sortie modal
+- Sortie Detail with horizontal flight-strip timeline
+- Training panel with score-pill selector
+- Aircraft Readiness with defect filing
+- Audit Log with filters
+- Test suite output (`101 passed`)
+
+---
+
 ## Quick Demo Credentials (Seed Data)
 
 | Role                 | Email                  |
