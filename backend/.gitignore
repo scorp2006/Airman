@@ -1,0 +1,18 @@
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual env folder
+venv/
+.venv/
+
+# Local secrets (do NOT commit real passwords)
+.env
+
+# Editors
+.vscode/
+.idea/
+
+# Pytest cache
+.pytest_cache/

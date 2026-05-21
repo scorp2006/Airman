@@ -1,0 +1,80 @@
+/* Fonts must precede tailwind directives */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply h-full bg-bg-base text-ink-mid font-sans antialiased;
+  }
+  body {
+    background-color: #000;
+    /* subtle vignette for depth */
+    background-image: radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(182,242,90,0.04), transparent 65%);
+  }
+}
+
+@layer components {
+  /* Big rounded card - the bento block */
+  .card {
+    @apply bg-bg-card rounded-chunk border border-bg-line/60 shadow-card;
+  }
+  .card-2 {
+    @apply bg-bg-card2 rounded-chunk border border-bg-line/60;
+  }
+
+  /* Pill buttons */
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-pill px-4 py-2 text-sm font-medium transition;
+  }
+  .pill-ghost {
+    @apply pill bg-bg-card text-ink-mid border border-bg-line hover:bg-bg-card2 hover:text-ink-high
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .pill-primary {
+    @apply pill bg-lime text-black hover:bg-lime-dark
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .pill-warn {
+    @apply pill bg-tang text-black hover:bg-tang-dark
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .pill-danger {
+    @apply pill bg-bg-card text-red-400 border border-red-500/40 hover:bg-red-500/10
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .pill-white {
+    @apply pill bg-white text-black hover:bg-ink-mid
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  /* Status chip (chunky) */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-pill px-3 py-1 text-xs font-semibold uppercase tracking-wide;
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full bg-bg-card2 border border-bg-line rounded-2xl px-4 py-3 text-ink-high text-sm
+           placeholder:text-ink-dim focus:outline-none focus:border-lime/50 transition;
+  }
+  .label {
+    @apply block text-[11px] font-semibold uppercase tracking-wider text-ink-low mb-2;
+  }
+
+  /* Tiny section label inside a card */
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-low;
+  }
+
+  /* Mini circular icon button (sidebar/nav) */
+  .icon-btn {
+    @apply w-11 h-11 rounded-pill grid place-items-center bg-bg-card border border-bg-line/60
+           text-ink-mid hover:text-ink-high hover:bg-bg-card2 transition;
+  }
+  .icon-btn-active {
+    @apply bg-lime text-black border-lime hover:bg-lime hover:text-black;
+  }
+}
